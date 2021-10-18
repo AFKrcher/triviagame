@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Default to not running on prod to avoid including by accident
+
+images:
+- name: galvanize/api
+  newName: registry.il2.dso.mil/tron/products/galvanize/cohort05/sdi05-04/api
+  newTag: "8d0ab6c6"
+- name: galvanize/ui
+  newName: registry.il2.dso.mil/tron/products/galvanize/cohort05/sdi05-04/ui
+  newTag: "555ce262"
+resources:
+- ../../base

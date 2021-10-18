@@ -1,0 +1,33 @@
+{
+  "name": "express_world",
+  "version": "1.0.0",
+  "description": "Express Hello World App",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "deploystart": "npm run reset; node ./app.js",
+    "dev": "npm node ./app.js",
+    "reset": "npx knex migrate:rollback && npx knex migrate:latest && npx knex seed:run",
+    "test": "jest",
+    "test:unit": "jest --coverage",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "eslint",
+    "test:e2e-ci": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.95.9",
+    "nodemon": "^2.0.12",
+    "pg": "^8.7.1",
+    "react-confetti": "^6.0.1",
+    "socket.io": "^4.1.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "jest": "^26.6.3",
+    "supertest": "^6.0.1",
+    "typescript": "^4.0.5"
+  }
+}
